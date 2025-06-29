@@ -3,8 +3,20 @@ function toggleMobileMenu(menu){
   menu.classList.toggle('open');
 }
 
+// Load global navbar
+function loadNavbar() {
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Error loading navbar:', error);
+    });
+}
 
-
+// Load navbar when DOM is ready
+document.addEventListener('DOMContentLoaded', loadNavbar);
 
 (function() {
   "use strict";
@@ -91,6 +103,32 @@ function toggleMobileMenu(menu){
       backSpeed: 50,
       backDelay: 2000
     });
+  }
+
+  /**
+   * Text switcher animation
+   */
+  const textSwitcher = document.querySelector('#text-switcher');
+  if (textSwitcher) {
+    const texts = [
+      "Crafting clean user-centered product solutions",
+      "Blending form function and sustainability", 
+      "Exploring the future of design with AI-powered tools"
+    ];
+    
+    let currentIndex = 0;
+    
+    function switchText() {
+      textSwitcher.style.opacity = '0';
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % texts.length;
+        textSwitcher.textContent = texts[currentIndex];
+        textSwitcher.style.opacity = '1';
+      }, 500);
+    }
+    
+    // Switch text every 3 seconds
+    setInterval(switchText, 3000);
   }
 
   /**
