@@ -1,26 +1,64 @@
-<header>
-  <!--Desktop nav-bar-->
-  <nav class="navb">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">about</a></li>
-      <li><a href="assets/cv_sarthak.pdf" target="_blank">Resume</a></li>
-      <li><a href="projects.html">projects</a></li>
-      <li><a href="portfolio2.html">extras</a></li>
-      <li><a href="contact.html">Contact </a></li>
+<header class="navbar-container">
+  <!-- Desktop Navigation -->
+  <nav class="navbar">
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="index.html" class="nav-link">
+          <span class="nav-text">Home</span>
+          <span class="nav-indicator"></span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="about.html" class="nav-link">
+          <span class="nav-text">About</span>
+          <span class="nav-indicator"></span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="assets/cv_sarthak.pdf" target="_blank" class="nav-link">
+          <span class="nav-text">Resume</span>
+          <span class="nav-indicator"></span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="projects.html" class="nav-link">
+          <span class="nav-text">Projects</span>
+          <span class="nav-indicator"></span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="portfolio2.html" class="nav-link">
+          <span class="nav-text">Extras</span>
+          <span class="nav-indicator"></span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="contact.html" class="nav-link">
+          <span class="nav-text">Contact</span>
+          <span class="nav-indicator"></span>
+        </a>
+      </li>
     </ul>
+
+    <!-- Mobile Menu Toggle -->
+    <div class="mobile-toggle" onclick="toggleMobileMenu(this)">
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
   </nav>
-    <!--Mobile nav-bar-->
-  <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
-    <div class="bar1"></div>
-    <div class="bar2"></div>
-    <div class="bar3"></div>
-    <ul class="mobile-menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">about</a></li>
-      <li><a href="projects.html">projects</a></li>
-      <li><a href="portfolio2.html">extras</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <div class="mobile-menu-content">
+      <a href="index.html" class="mobile-link">Home</a>
+      <a href="about.html" class="mobile-link">About</a>
+      <a href="assets/cv_sarthak.pdf" target="_blank" class="mobile-link">Resume</a>
+      <a href="projects.html" class="mobile-link">Projects</a>
+      <a href="portfolio2.html" class="mobile-link">Extras</a>
+      <a href="contact.html" class="mobile-link">Contact</a>
+    </div>
   </div>
 </header> 

@@ -1,6 +1,19 @@
 //nav bar toggle---------------
 function toggleMobileMenu(menu){
-  menu.classList.toggle('open');
+  const hamburger = menu.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  
+  hamburger.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+  
+  // Close mobile menu when clicking on a link
+  const mobileLinks = mobileMenu.querySelectorAll('.mobile-link');
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('active');
+    });
+  });
 }
 
 // Load global navbar
@@ -9,6 +22,20 @@ function loadNavbar() {
     .then(response => response.text())
     .then(data => {
       document.getElementById('navbar-placeholder').innerHTML = data;
+      
+      // Add scroll effect to navbar
+      const navbar = document.querySelector('.navbar-container');
+      if (navbar) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(255, 255, 255, 0.85)';
+            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+          } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.7)';
+            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.05)';
+          }
+        });
+      }
     })
     .catch(error => {
       console.error('Error loading navbar:', error);
